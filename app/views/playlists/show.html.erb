@@ -2,6 +2,14 @@
 	<p class="welcome"><%= @playlist.title %></p>
 	<br />
 </div>
+
+<div class="playlist_locations">
+	<% @playlist.taggings.each do |tag| %> 
+		<%= tag.location.name %>
+	<% end %>
+</div>
+
+<br />
 <div class="playlist">
 	<ul id="playlist">
 		<% @playlist.songs.each do |song| %>
@@ -12,7 +20,7 @@
   <%= link_to 'Delete Playlist', playlist_path(@playlist),
           method: :delete,
           data: { confirm: "Are you sure?" }, :class => "button tiny"%>
-  <%= link_to 'Tag a playlist to a location', "" %>
+  <%= link_to "Tag a location", new_playlist_location_path(@playlist), :class => "button tiny" %>
   <a class="button tiny" href="/playlists/<%=@playlist.id%>/songs/new">Add a Song</a>
 </div>
 <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg"></audio>

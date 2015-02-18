@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
          :omniauthable, :omniauth_providers => [:twitter]
   has_many :playlists
   has_many :songs, through: :playlists
+  has_many :taggings
+  has_many :locations, through: :taggings
+
 
   # extract the information that is available after the authentication.
 	def self.from_omniauth(auth)
