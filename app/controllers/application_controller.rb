@@ -12,10 +12,11 @@ class ApplicationController < ActionController::Base
     users.each do |u|
 
       body = firebase.get("user#{u.id.to_s}").body
-      current_user_body = firebase.get("user#{current_user.id.to_s}").body
-      user_time = (body['datetime'] || 1.second.ago)
 
-      if body
+      current_user_body = firebase.get("user#{current_user.id.to_s}").body
+
+      if body && current_user_body
+        user_time = (body['datetime'] || 1.second.ago)
         this_user_point = body['l']
         current_user_point = current_user_body['l']
 
