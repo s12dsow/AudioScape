@@ -12,6 +12,7 @@
   <%= link_to 'Delete Playlist', playlist_path(@playlist),
           method: :delete,
           data: { confirm: "Are you sure?" }, :class => "button tiny"%>
+  <%= link_to 'Tag a playlist to a location', "" %>
   <a class="button tiny" href="/playlists/<%=@playlist.id%>/songs/new">Add a Song</a>
 </div>
 <audio id="audio" preload="auto" tabindex="0" controls="" type="audio/mpeg"></audio>
