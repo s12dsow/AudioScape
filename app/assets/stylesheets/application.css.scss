@@ -92,7 +92,32 @@ h1 {
   margin-left: .2em;
 }
 
+.username {
+  // margin-top: 2em;
+  margin-top: 1em;
+  margin-bottom: -.7em;
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+  font-size: .9em;
+  font-weight: bold;
+  margin-left: .2em;
+
+}
+
 .user_playlists a {
+  color: red;
+}
+
+.link a {
+  font-size: 2em;
+  font-weight: bold;
+  color: grey;
+  padding-left: .5em;
+  overflow: hidden;
+
+}
+
+.link a:hover {
   color: red;
 }
 
@@ -112,6 +137,11 @@ h1 {
   /*min-height: 12em;*/
 //  border: .2em dashed grey;
   overflow: hidden;
+}
+
+p {
+  font-color: grey;
+
 }
 
 .user_playlists span {
